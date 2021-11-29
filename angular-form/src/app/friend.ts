@@ -3,7 +3,7 @@ export class Friend {
         public firstName: string,
         public lastName: string,
         public email: string,
-        public phoneNumber: number,
+        public phoneNumber: string,
         public favouriteLanguage: string
     ){}
 }
