@@ -1,5 +1,9 @@
 export class Friend {
-    constructor(){
-        
-    }
+    constructor(
+        public firstName: string,
+        public lastName: string,
+        public email: string,
+        public phoneNumber: number,
+        public favouriteLanguage: string
+    ){}
 }
