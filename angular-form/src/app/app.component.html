@@ -53,11 +53,11 @@
         <div class="form-group">
           <label for="favouriteLanguage">Favourite language</label><br>
           <select name="favouriteLanguag" id="favouriteLanguag" #inputName="ngModel" ngModel>
-            <!-- <option value="" *ngFor="let language of languages">{{language}}</option> -->
-            <option value="html">html</option>
+            <option *ngFor="let language of languages" value="{{language}}">{{language}}</option>
+            <!-- <option value="html">html</option>
             <option value="css">css</option>
             <option value="js">js</option>
-            <option value="php">php</option>
+            <option value="php">php</option> -->
           </select><br><br>
         </div>
         <button type="submit" class="btn btn-primary" type="submit" name="submit">Submit</button>
