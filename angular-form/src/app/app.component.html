@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angular Form</title>
+  <link rel="stylesheet" href="app.component.css">
+</head>
+
+<body>
+  <!-- <form action="" #>
+    <label for="firstName">First Name</label><br>
+    <input type="text" id="firstName" name="firstName"><br><br>
+    <label for="lastName">Last Name</label><br>
+    <input type="text" id="lastName" name="lastName"><br><br>
+    <label for="email">Email</label><br>
+    <input type="text" id="email" name="email"><br><br>
+    <label for="phoneNumber">Phone Number</label><br>
+    <input type="text" id="phoneNumber" name="phoneNumber"><br><br>
+    <label for="favouriteLanguage">Favourite language</label><br>
+    <select name="favouriteLanguag" id="favouriteLanguag">
+      <option value="html">html</option>
+      <option value="css">css</option>
+      <option value="js">js</option>
+      <option value="php">php</option>
+    </select><br><br>
+    <button type="button">Submit</button>
+  </form> -->
+
+  <div class="container">
+    <div class="col-xs-6">
+      <form action="" #formName="ngForm">
+        <h1>Angular Form</h1>
+        <div class="form-group">
+          <label for="firstName">First Name</label><br>
+          <input type="text" name="firstName" class="form-control"><br><br>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label><br>
+          <input type="text" name="lastName" class="form-control"><br><br>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label><br>
+          <input type="text" name="email" class="form-control"><br><br>
+        </div>
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number</label><br>
+          <input type="text" name="phoneNumber"><br><br>
+        </div>
+        <div class="form-group">
+          <label for="favouriteLanguage">Favourite language</label><br>
+          <select name="favouriteLanguag" id="favouriteLanguag">
+            <option value="html">html</option>
+            <option value="css">css</option>
+            <option value="js">js</option>
+            <option value="php">php</option>
+          </select><br><br>
+        </div>
+        <button type="submit" class="btn btn-primary" type="submit" name="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
