@@ -5,5 +5,5 @@ export class Friend {
         public email: string,
         public phoneNumber: string,
         public favouriteLanguage: string
-    ){}
+    ) { }
 }
