@@ -13,5 +13,15 @@ export class AppComponent {
 
   public phoneCodes = ["+32", "+31", "+49"];
 
-  friendModel = new Friend('', 'Joshi', 'shreejan1212@gmail.com', '', '0484905177', '');
+  selctorHasError = true;
+
+  friendModel = new Friend('Shreejan', 'Joshi', 'shreejan1212@gmail.com', 'default', '484905177', 'default');
+
+  selector(value: string){
+    if(value === 'default'){
+      this.selctorHasError = true;
+    }else{
+      this.selctorHasError = false;
+    }
+  }
 }
