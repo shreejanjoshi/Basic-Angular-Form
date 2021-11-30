@@ -1,4 +1,4 @@
-body{
+/* body{
     margin: 0 auto;
 }
 
@@ -22,4 +22,45 @@ label{
 
 select{
     margin-top: 20px;
+} */
+
+body{
+    margin: 0 auto;
+    text-align: center;
+}
+
+input{
+    width: 50%;
+    padding-top: 20px;
+    margin-top: 20px;
+    margin: 0 auto;
+}
+
+select{
+    width: 20%;
+    padding-top: 20px;
+    margin-top: 20px;
+    margin: 0 auto;
+}
+
+
+label{
+    padding-top: 20px;
+}
+
+.container{
+    width: 750px;
+}
+
+.btn{
+    margin-bottom: 20px;
+}
+
+select{
+    margin-top: 20px;
+}
+
+h1{
+    margin-top: 20px;
+    text-align: center;
 }
