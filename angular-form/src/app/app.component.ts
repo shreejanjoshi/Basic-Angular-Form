@@ -11,5 +11,7 @@ export class AppComponent {
 
   public languages = ["html", "css", "js", "php"];
 
-  friendModel = new Friend('Shreejan', 'Joshi', 'shreejan1212@gmail.com', '0484905177', '');
+  public phoneCodes = ["+32", "+31", "+49"];
+
+  friendModel = new Friend('', 'Joshi', 'shreejan1212@gmail.com', '', '0484905177', '');
 }
