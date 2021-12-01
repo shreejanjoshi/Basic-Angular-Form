@@ -15,10 +15,10 @@
 <body>
   <div class="container">
     <div class="col-xs-6">
-      <form action="" #formName="ngForm">
+      <form action="" (ngSubmit)="onSubmit(formName)" #formName="ngForm" novalidate>
         <!-- {{friendModel | json}} -->
 
-        {{formName.form.valid}}
+        <!-- {{formName.form.valid}} -->
 
         <h1>Angular Form</h1>
         <!-- ____________________________________________________________________ -->
@@ -53,37 +53,37 @@
         <div class="form-group">
           <label for="phoneNumber">Phone Number</label>
 
-          <select (blur)="selector(phoneCode.value)"
-            (change)="selector(phoneCode.value)" name="phoneCode" class="form-control"
-            id="phoneCode" #phoneCode="ngModel"
-            [class.is-invalid]="selctorHasError && phoneCode.touched"
-            [(ngModel)]="friendModel.phoneCode">
+          <select (blur)="selector(phoneCode.value)" (change)="selector(phoneCode.value)" name="phoneCode"
+            class="form-control" id="phoneCode" #phoneCode="ngModel"
+            [class.is-invalid]="selctorHasError && phoneCode.touched" [(ngModel)]="friendModel.phoneCode">
 
             <option value="default">choose phone code</option>
             <option *ngFor="let phoneCode of phoneCodes" value="{{phoneCode}}">{{phoneCode}}</option>
 
           </select>
 
-          <small class="text-danger" [class.d-none]="!selctorHasError || phoneCode.untouched">phone code is
-            required</small><br>
+          <small class="text-danger" [class.d-none]="!selctorHasError || phoneCode.untouched"></small><br>
 
           <input type="text" name="phoneNumber" class="form-control" #phoneNumber="ngModel" pattern="^\d{9}$" required
             [class.is-invalid]="phoneNumber.invalid && phoneNumber.touched" [(ngModel)]="friendModel.phoneNumber">
 
-          <!-- <div *ngIf="phoneNumber.errors && (phoneNumber.invalid || phoneNumber.touched)">
+          <small class="text-danger" [class.d-none]="phoneNumber.valid || phoneNumber.untouched">Phone number must be 9
+            digit and must be required</small>
+        </div>
+
+        <!-- <div *ngIf="phoneNumber.errors && (phoneNumber.invalid || phoneNumber.touched)">
 
             <small class="text-danger" *ngIf="phoneNumber.errors.required">phone number is required</small>
 
             <small class="text-danger" *ngIf="phoneNumber.errors.pattern">phone number must be 9 digit</small>
           </div> -->
-        </div>
+
         <!-- ____________________________________________________________________ -->
         <div class="form-group">
           <label for="favouriteLanguage">Favourite language</label>
 
-          <select (blur)="selector(favouriteLanguage.value)"
-            (change)="selector(favouriteLanguage.value)" name="favouriteLanguage" class="form-control"
-            id="favouriteLanguage" #favouriteLanguage="ngModel"
+          <select (blur)="selector(favouriteLanguage.value)" (change)="selector(favouriteLanguage.value)"
+            name="favouriteLanguage" class="form-control" id="favouriteLanguage" #favouriteLanguage="ngModel"
             [class.is-invalid]="selctorHasError && favouriteLanguage.touched"
             [(ngModel)]="friendModel.favouriteLanguage">
 
@@ -92,12 +92,21 @@
 
           </select>
 
-          <small class="text-danger"
-            [class.d-none]="!selctorHasError || favouriteLanguage.untouched">favourite
+          <small class="text-danger" [class.d-none]="!selctorHasError || favouriteLanguage.untouched">favourite
             language is required</small><br><br>
         </div>
         <!-- ____________________________________________________________________ -->
-        <button [disabled]="formName.form.invalid || selctorHasError" type="submit" class="btn btn-primary" type="submit" name="submit">Submit</button>
+        <!-- [disabled]="formName.form.invalid || selctorHasError" -->
+        <button [disabled]="formName.form.invalid || selctorHasError" type="submit" class="btn btn-primary"
+          type="submit" name="submit">Submit</button><br><br><br>
+
+        <div *ngFor="let friendName of allFriend;">
+          <h3 class="text-center">{{friendName.firstName}} {{friendName.lastName}}</h3>
+          <p>Email: {{friendName.firstName}}</p>
+          <p>Phone: {{friendName.phoneCode}}{{friendName.phoneNumber}}</p>
+          <p>Favourite language: {{friendName.favouriteLanguage}}</p>
+          <hr>
+        </div>
 
       </form>
     </div>
